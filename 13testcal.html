@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+<style>  
+   * {  font-size: 14pt; }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    function add (a ,b){
+        return a + b ;
+    }
+    function sub (a, b){
+        return a - b ;
+    }
+    function mul (a, b){
+        return a * b ;
+    }
+    function mok (a, b){
+        return a / b ;
+    }
+
+    function click_in(OP){
+        var msg1 = document.getElementById("su1");
+        var msg2 = document.getElementById("su2");
+        var result = document.getElementById("result");
+
+        var su1=Number (msg1.value);
+        var su2=Number (msg2.value);
+
+        var su3;
+
+        if(OP=='+'){
+            su3 = add (su1, su2);
+        }
+        else if(OP=='-'){
+            su3 = sub (su1, su2);
+        }
+        else if(OP=='*'){
+            su3 = mul (su1, su2);
+        }
+        else if(OP=='/'){
+            su3 = mok (su1, su2);
+        }
+        result.value = String (su3);
+    }
+    
+</script>
+</head>
+<body>
+    <h2> 13testcal.html </h2>
+    <form name="myform" id="myform">
+        
+        숫자1 : <input type="text" name="su1" id="su1"> <br>
+        숫자2 : <input type="text" name="su2" id="su2"> <br>
+              <input type="button" value="더하기" name="btnadd" id="btnadd" onclick="click_in('+');">
+              <input type="button" value="빼기" name="btnsub" id="btnsub" onclick="click_in('-');>
+              <input type="button" value="곱하기" name="btnmul" id="btnmul" onclick="click_in('*');>
+              <input type="button" value="몫" name="btnmok" id="btnmok" onclick="click_in('/');>
+    </form>
+    결과 : <span id="result"></span>
+</body>
+</html> 
